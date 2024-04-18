@@ -1,4 +1,6 @@
 export async function onRequest(context) {  // Contents of context object  
+       debugger;
+    alert(1122);
     const {   
         request, // same as existing Worker API    
     env, // same as existing Worker API    
@@ -8,7 +10,7 @@ export async function onRequest(context) {  // Contents of context object
      data, // arbitrary space for passing data between middlewares 
      } = context;
      context.request
-    debugger;
+ 
     const allowedDomains = env.DOMAIN_LIST.split(",");  //域名从cloudflare的环境变量中获取
     const firstDomain = allowedDomains[0];  // 获取列表中的第一个域名
 
