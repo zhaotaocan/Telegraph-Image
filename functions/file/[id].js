@@ -1,6 +1,5 @@
 export async function onRequest(context) {  // Contents of context object  
-       debugger;
-    alert(1122);
+
     const {   
         request, // same as existing Worker API    
     env, // same as existing Worker API    
@@ -15,8 +14,8 @@ export async function onRequest(context) {  // Contents of context object
     const firstDomain = allowedDomains[0];  // 获取列表中的第一个域名
 
     // Extract the Referer header or use a placeholder if not present
-    const Referer = request.headers.get('Referer') || "Referer";
-    console.log(Referer);
+    const Referer = request.headers.get('Referer') || request.url;
+
     // Create a URL object from the Referer to extract the hostname
     let refererUrl;
     try {
